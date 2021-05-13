@@ -17,8 +17,9 @@ public class Account {
     }
 
     public void deposit(double amountToDeposit) {
-        if(amountToDeposit < 0) return;
-        myAccountBalance = myAccountBalance + amountToDeposit;
+        if(amountToDeposit > 0) {
+            myAccountBalance = myAccountBalance + amountToDeposit;
+        }
     }
 
     public double getAccountBalance() {
