@@ -57,22 +57,22 @@ public class Course {
     }
 
     public boolean findModule(){
-        return false
+        return false;
     }
 
     public boolean findAssessment(){
-        return false
+        return false;
     }
 
     public boolean assignAssessment(){
-        return false
+        return false;
     }
 
     public boolean findProject(){
-        return false
+        return false;
     }
 
     public boolean assignProject(){
-        return false
+        return false;
     }
 }
