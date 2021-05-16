@@ -26,18 +26,14 @@ public class AirConditioner {
         return this.productName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
     public void increaseTemperature() {
-        if(this.isOn() && this.temperature < HIGHEST_TEMPERATURE){
+        if(isOn && this.temperature < HIGHEST_TEMPERATURE){
             this.temperature++;
         }
     }
 
     public void decreaseTemperature() {
-        if(this.isOn() && this.temperature > LOWEST_TEMPERATURE){
+        if(isOn && this.temperature > LOWEST_TEMPERATURE){
             this.temperature--;
         }
     }

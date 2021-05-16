@@ -16,7 +16,6 @@ Requirements:
 * LOWEST TEMPERATURE = 16
 * HIGHEST TEMPERATURE = 30
 6. The AirConditioner starts with an initial temperature of 16.
-7. The AirConditioner is allowed to update its product name.
 
  */
 
@@ -35,12 +34,6 @@ public class AirConditionerTest {
         assertEquals("Haier Thermocool", airConditioner.getProductName());
     }
 
-    @Test
-    public void testThatAirConditionerProductNameCanBeSet(){
-        airConditioner.setProductName("Samsung");
-
-        assertEquals("Samsung", airConditioner.getProductName());
-    }
 
     @Test
     public void testThatAirConditionerCanBeTurnedOn(){
