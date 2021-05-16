@@ -177,4 +177,15 @@ public class BikeTest {
         assertEquals(1, okada.getCurrentGearNumber());
         assertEquals(19, okada.getSpeedInKmPerHour());
     }
+
+    @Test
+    public void testThatWhenBikeIsOffGearNumberIsZero(){
+        okada.setOn(true);
+        okada.setSpeedInKmPerHour(78);
+        okada.slowDown();
+        assertEquals(4, okada.getCurrentGearNumber());
+
+        okada.setOn(false);
+        assertEquals(0, okada.getCurrentGearNumber());
+    }
 }
