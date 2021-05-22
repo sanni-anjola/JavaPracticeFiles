@@ -36,6 +36,7 @@ public class HeartRate {
         }
     }
 
+
     public int getDay() {
         return this.day;
     }

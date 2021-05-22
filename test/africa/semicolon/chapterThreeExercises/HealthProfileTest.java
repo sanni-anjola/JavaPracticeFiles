@@ -37,13 +37,26 @@ public class HealthProfileTest {
 
     @Test
     void testThatHealthProfileCannotSetWrongHealthProfile(){
-        HealthProfile dummyHealthProfile = new HealthProfile("Omosetan", "Omorele", "Female",23, -8, 1976, -9, -34);
-        assertNotEquals(23, dummyHealthProfile.getMonth());
-        assertNotEquals(-8, dummyHealthProfile.getDay());
+        HealthProfile dummyHealthProfile = new HealthProfile("Omosetan", "Omorele", "Female",-5, -7, 1976, -9, -34);
+        assertNotEquals(-5, dummyHealthProfile.getMonth());
+        assertEquals(1, dummyHealthProfile.getMonth());
+        assertEquals(1, dummyHealthProfile.getDay());
+        assertNotEquals(-7, dummyHealthProfile.getDay());
         assertNotEquals(-9, dummyHealthProfile.getHeight());
         assertNotEquals(-34, dummyHealthProfile.getWeight());
     }
 
+    @Test
+    void testThatHealthProfileTestDoesNotSetWrongDayForMonthAndLeapYear(){
+        HealthProfile dummyHealthProfile = new HealthProfile("Omosetan", "Omorele", "Female",2, 29, 1900, -9, -34);
+        assertNotEquals(29, dummyHealthProfile.getDay());
+
+        dummyHealthProfile = new HealthProfile("Omosetan", "Omorele", "Female",11, 31, 1976, -9, -34);
+        assertNotEquals(31, dummyHealthProfile.getDay());
+        dummyHealthProfile = new HealthProfile("Omosetan", "Omorele", "Female",1, 31, 1976, -9, -34);
+        assertEquals(31, dummyHealthProfile.getDay());
+
+    }
     @Test
     void testThatHealthProfileDoesNotSetWrongDay(){
         healthProfile.setDay(45);
@@ -122,7 +135,7 @@ public class HealthProfileTest {
     void testThatHealthProfileCanDisplayHealthInformation(){
         String healthInfo = String.format("Name: %s %s%nGender: %s%nDate Of Birth: %s%nAge: %d%nMaximum Heart Rate: %d%nTarget HeartRate Range: %s%nBMI: %.2f",
                 "Blue", "John", "Male", "1970/11/24", 51, 169, "84.50 - 143.65", 19.88);
-        System.out.println(healthProfile.displayHealthProfile());
+//        System.out.println(healthProfile.displayHealthProfile());
         assertEquals(healthInfo, healthProfile.displayHealthProfile());
     }
 }
