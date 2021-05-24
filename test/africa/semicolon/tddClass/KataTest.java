@@ -53,101 +53,101 @@ public class KataTest {
 
     @Test
     void testThatWhatGradeIsReturnsAFor90AndAbove(){
-        assertEquals('A', kata.whatGradeIs(96));
+        assertEquals('A', kata.getGrade(96));
     }
 
     @Test
     void testThatWhatGradeIsReturnsBFor80to89(){
-        assertEquals('B', kata.whatGradeIs(83));
+        assertEquals('B', kata.getGrade(83));
     }
 
     @Test
     void testThatWhatGradeIsReturnsCFor70to79(){
-        assertEquals('C', kata.whatGradeIs(70));
+        assertEquals('C', kata.getGrade(70));
     }
 
     @Test
     void testThatWhatGradeIsReturnsDFor60to69(){
-        assertEquals('D', kata.whatGradeIs(61));
+        assertEquals('D', kata.getGrade(61));
     }
 
     @Test
     void testThatWhatGradeIsReturnsFFor59AndBelow(){
-        assertEquals('F', kata.whatGradeIs(59));
+        assertEquals('F', kata.getGrade(59));
     }
 
     @Test
     void testThatTotalAmountForTestDrillerReturnsZeroForNegativeCopies(){
-        assertEquals(0, kata.totalAmountForTestDriller(-3));
+        assertEquals(0, kata.getTotalAmountForTestDriller(-3));
     }
 
     @Test
     void testThatTotalAmountForTestDrillerReturnsThePriceFor4CopiesOrLess(){
-        assertEquals(4500, kata.totalAmountForTestDriller(3));
+        assertEquals(4500, kata.getTotalAmountForTestDriller(3));
     }
 
     @Test
     void testThatTotalAmountForTestDrillerReturnsThePriceFor5to9Copies(){
-        assertEquals(11200, kata.totalAmountForTestDriller(8));
+        assertEquals(11200, kata.getTotalAmountForTestDriller(8));
     }
 
     @Test
     void testThatTotalAmountForTestDrillerReturnsThePriceFor10to29Copies(){
-        assertEquals(25200, kata.totalAmountForTestDriller(21));
+        assertEquals(25200, kata.getTotalAmountForTestDriller(21));
     }
 
     @Test
     void testThatTotalAmountForTestDrillerReturnsThePriceFor50to99Copies(){
-        assertEquals(77000, kata.totalAmountForTestDriller(77));
+        assertEquals(77000, kata.getTotalAmountForTestDriller(77));
     }
 
     @Test
     void testThatTotalAmountForTestDrillerReturnsThePriceFor100to199Copies(){
-        assertEquals(178200, kata.totalAmountForTestDriller(198));
+        assertEquals(178200, kata.getTotalAmountForTestDriller(198));
     }
 
     @Test
     void testThatTotalAmountForTestDrillerReturnsThePriceFor200CopiesOrAbove(){
-        assertEquals(240000, kata.totalAmountForTestDriller(300));
+        assertEquals(240000, kata.getTotalAmountForTestDriller(300));
     }
 
     @Test
     void testThatResellersProfitReturnedZeroForNegativeCopies(){
-        assertEquals(0, kata.resellersProfit(-7));
+        assertEquals(0, kata.getProfit(-7));
     }
 
     @Test
     void testThatResellersProfitReturnedIsCorrectFor4CopiesOrLess(){
-        assertEquals(1000, kata.resellersProfit(2));
+        assertEquals(1000, kata.getProfit(2));
     }
 
     @Test
     void testThatResellersProfitReturnedIsCorrectFor5To9Copies(){
-        assertEquals(3600, kata.resellersProfit(6));
+        assertEquals(3600, kata.getProfit(6));
     }
 
     @Test
     void testThatResellersProfitReturnedIsCorrectFor10To29Copies(){
-        assertEquals(12000, kata.resellersProfit(15));
+        assertEquals(12000, kata.getProfit(15));
     }
 
     @Test
     void testThatResellersProfitReturnedIsCorrectFor30To49Copies(){
-        assertEquals(36000, kata.resellersProfit(40));
+        assertEquals(36000, kata.getProfit(40));
     }
 
     @Test
     void testThatResellersProfitReturnedIsCorrectFor50To99Copies(){
-        assertEquals(67000, kata.resellersProfit(67));
+        assertEquals(67000, kata.getProfit(67));
     }
 
     @Test
     void testThatResellersProfitReturnedIsCorrectFor100To199Copies(){
-        assertEquals(211200, kata.resellersProfit(192));
+        assertEquals(211200, kata.getProfit(192));
     }
 
     @Test
     void testThatResellersProfitReturnedIsCorrectFor200CopiesAndAbove(){
-        assertEquals(620400, kata.resellersProfit(517));
+        assertEquals(620400, kata.getProfit(517));
     }
 }

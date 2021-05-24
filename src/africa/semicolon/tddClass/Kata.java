@@ -18,7 +18,7 @@ public class Kata {
     }
 
 
-    public char whatGradeIs(int score) {
+    public char getGrade(int score) {
 
         if(score >= 90){
             return 'A';
@@ -33,7 +33,7 @@ public class Kata {
         }
     }
 //    TestDriller
-    public int totalAmountForTestDriller(int copies){
+    public int getTotalAmountForTestDriller(int copies){
         int amountPerDrill = 0;
         if(copies > 0) {
             if (copies >= 200) {
@@ -56,12 +56,12 @@ public class Kata {
 
     }
 
-    public int resellersProfit(int copies){
+    public int getProfit(int copies){
         final int AMOUNT_PER_DRILL = 2000;
         int profit = 0;
         if(copies > 0) {
             int sellingPrice = copies * AMOUNT_PER_DRILL;
-            profit = sellingPrice - totalAmountForTestDriller(copies);
+            profit = sellingPrice - getTotalAmountForTestDriller(copies);
         }
         return profit;
     }
