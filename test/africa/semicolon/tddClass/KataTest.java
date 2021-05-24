@@ -150,4 +150,20 @@ public class KataTest {
     void testThatResellersProfitReturnedIsCorrectFor200CopiesAndAbove(){
         assertEquals(620400, kata.getProfit(517));
     }
+
+    @Test
+    void testThatComputeNumberOfFactorsReturns4For10(){
+        assertEquals(1, kata.computeNumberOfFactors(1));
+        assertEquals(2, kata.computeNumberOfFactors(2));
+        assertEquals(4, kata.computeNumberOfFactors(10));
+        assertEquals(6, kata.computeNumberOfFactors(20));
+        assertEquals(3, kata.computeNumberOfFactors(25));
+        assertEquals(9, kata.computeNumberOfFactors(100));
+    }
+
+    @Test
+    void testThatComputeNumberOfFactorsReturnsZeroForNumbersLessThanOrEqualToZero(){
+        assertEquals(0, kata.computeNumberOfFactors(0));
+        assertEquals(0, kata.computeNumberOfFactors(-15));
+    }
 }
