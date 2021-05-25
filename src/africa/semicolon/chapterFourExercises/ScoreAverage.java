@@ -27,7 +27,7 @@ public class ScoreAverage {
             count++;
         }
 
-        System.out.println("The Sum of the 15 Scores is "+ sum);
+        System.out.printf("The Sum of the 15 Scores is %d%n", sum);
         System.out.printf("The average of the Scores is %.2f%n", sum / 15.0);
     }
 }
