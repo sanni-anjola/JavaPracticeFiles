@@ -70,8 +70,8 @@ public class Kata {
         int lowerLimit = 1;
         int numberOfFactors = 0;
         int upperLimit = number / 2;
-        while (lowerLimit <= upperLimit){
-            if(number % lowerLimit == 0){
+        while (lowerLimit <= upperLimit) {
+            if (number % lowerLimit == 0) {
                 numberOfFactors++;
             }
             lowerLimit++;
@@ -79,4 +79,5 @@ public class Kata {
         numberOfFactors = number <= 0 ? 0 : numberOfFactors + 1;
         return numberOfFactors;
     }
+
 }

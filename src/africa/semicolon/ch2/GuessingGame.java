@@ -1,3 +1,5 @@
+package africa.semicolon.ch2;
+
 import java.util.Scanner;
 
 public class GuessingGame{

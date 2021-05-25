@@ -1,3 +1,5 @@
+package africa.semicolon.ch2;
+
 public class CheckerBoardPattern{
 
     public static void main(String... args){

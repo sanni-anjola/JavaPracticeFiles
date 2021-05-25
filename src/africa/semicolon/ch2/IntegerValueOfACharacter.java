@@ -1,3 +1,5 @@
+package africa.semicolon.ch2;
+
 public class IntegerValueOfACharacter{
     public static void main(String... args){
         // A B C a b c 0 1 2 $ * + / and the blank character
