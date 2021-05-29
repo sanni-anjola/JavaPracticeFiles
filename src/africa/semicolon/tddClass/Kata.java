@@ -2,19 +2,22 @@ package africa.semicolon.tddClass;
 
 public class Kata {
     public boolean isPalindrome(int number) {
-        int reversedNumber = 0;
-        int num = Math.abs(number);
-        int numberOfDigits = (int)Math.log10(num) + 1;
-        for(int i = 1; i <= numberOfDigits; i++){
-            reversedNumber += ((num % 10) * (int)Math.pow(10, numberOfDigits - i));
-            num = num / 10;
-        }
-        if(Math.abs(number)  != reversedNumber){
-//            System.out.println("This number is not a palindrome");
+        number = Math.abs(number);
+
+        if(number != getReversedNumber(number)){
             return false;
         }
-//        System.out.println("This number is a palindrome");
         return true;
+    }
+
+    private int getReversedNumber(int number) {
+        int reversedNumber = 0;
+        int numberOfDigits = (int)Math.log10(number) + 1;
+        for(int i = 1; i <= numberOfDigits; i++){
+            reversedNumber += ((number % 10) * (int)Math.pow(10, numberOfDigits - i));
+            number = number / 10;
+        }
+        return reversedNumber;
     }
 
 

@@ -81,7 +81,7 @@ public class HealthProfile {
 
     public void setDay(int day) {
         this.day = 1;
-        byte maxDay;
+        int maxDay;
         boolean theMonthIsFebruary = month == 2;
         boolean ItIsALeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
         boolean theMonthHas30Days = month == 8 || month == 4 || month == 6 || month == 11;
