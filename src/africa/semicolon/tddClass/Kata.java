@@ -21,6 +21,8 @@ public class Kata {
     }
 
 
+
+
     public char getGrade(int score) {
 
         if(score >= 90){
@@ -83,4 +85,13 @@ public class Kata {
         return numberOfFactors;
     }
 
+    public String reverseNumber(int number) {
+       String numberString = String.format("%d", number);
+       String reversedNumber = "";
+       for (int i = numberString.length() - 1; i >= 0; i--){
+           reversedNumber += numberString.charAt(i);
+       }
+       return reversedNumber;
+
+    }
 }

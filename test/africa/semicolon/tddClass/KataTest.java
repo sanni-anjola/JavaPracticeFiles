@@ -166,4 +166,9 @@ public class KataTest {
         assertEquals(0, kata.computeNumberOfFactors(0));
         assertEquals(0, kata.computeNumberOfFactors(-15));
     }
+
+    @Test
+    void testThatReverseNumberDoesWhatItSays(){
+        assertEquals("54321", kata.reverseNumber(12345));
+    }
 }
