@@ -171,4 +171,18 @@ public class KataTest {
     void testThatReverseNumberDoesWhatItSays(){
         assertEquals("54321", kata.reverseNumber(12345));
     }
+
+    @Test
+    void testThatFindFactorialOfReturnsFactorialOfAGivenNumber(){
+
+        assertEquals(120, kata.findFactorialOf(5));
+        assertEquals(720, kata.findFactorialOf(6));
+    }
+
+    @Test
+    void testThatFindFactorialOfReturnsOneFactorialOfAZeroOrNegativeNumber(){
+
+        assertEquals(1, kata.findFactorialOf(-5));
+        assertEquals(1, kata.findFactorialOf(0));
+    }
 }
