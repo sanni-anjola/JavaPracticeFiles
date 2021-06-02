@@ -55,4 +55,38 @@ public class TrianglePattern {
         }
         return pattern;
     }
+
+    public String allPatterns(int numberOfRows){
+        String pattern = "";
+        final int SPACE = 5;
+        for(int i = 1; i <= numberOfRows; i++){
+            for (int j = 1; j <= i; j++){
+                pattern += "*";
+            }
+            for (int k = 1; k <= (numberOfRows - i) + SPACE; k++){
+                pattern += " ";
+            }
+            for (int j = 1; j <= numberOfRows + 1 - i; j++){
+                pattern += "*";
+            }
+            for (int k = 1; k <= SPACE + 2 * (i - 1); k++){
+                pattern += " ";
+            }
+            for (int j = 1; j <= numberOfRows + 1 - i; j++){
+                pattern += "*";
+            }
+
+            for (int k = 1; k <= (numberOfRows - i) + SPACE; k++){
+                pattern += " ";
+            }
+
+            for (int j = 1; j <= i; j++){
+                pattern += "*";
+            }
+
+            pattern += "\n";
+        }
+        return pattern;
+    }
+
 }

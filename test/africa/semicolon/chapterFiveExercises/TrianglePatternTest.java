@@ -83,7 +83,26 @@ public class TrianglePatternTest {
                 **********
                 """;
 
+        System.out.println(triangle.allPatterns(10));
         assertEquals(pattern, triangle.pattern4(10));
+    }
+
+    @Test
+    void testThatAllPatternsDisplaysTheFourPatternInARow(){
+        String pattern = """
+                *              **********     **********              *
+                **             *********       *********             **
+                ***            ********         ********            ***
+                ****           *******           *******           ****
+                *****          ******             ******          *****
+                ******         *****               *****         ******
+                *******        ****                 ****        *******
+                ********       ***                   ***       ********
+                *********      **                     **      *********
+                **********     *                       *     **********
+                """;
+
+        assertEquals(pattern, triangle.allPatterns(10));
     }
 
 }
