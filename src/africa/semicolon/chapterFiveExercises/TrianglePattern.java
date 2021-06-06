@@ -4,89 +4,65 @@ public class TrianglePattern {
 
 
     public String pattern1(int numberOfRows) {
-        String pattern = "";
+        StringBuilder pattern = new StringBuilder();
         for (int i = 1; i <= numberOfRows; i++) {
-            for (int j = 1; j <= i; j++) {
-                pattern += "*";
-            }
-            pattern += "\n";
+            pattern.append("*".repeat(Math.max(0, i)));
+            pattern.append("\n");
         }
-        return pattern;
+        return pattern.toString();
     }
 
     public String pattern2(int numberOfRows) {
-        String pattern = "";
+        StringBuilder pattern = new StringBuilder();
 
-        for (int i = 10; i >= 1; i--) {
-            for (int j = 1; j <= i; j++) {
-                pattern += "*";
-            }
-            pattern += "\n";
+        for (int i = numberOfRows; i >= 1; i--) {
+            pattern.append("*".repeat(i));
+            pattern.append("\n");
         }
-        return pattern;
+        return pattern.toString();
     }
 
     public String pattern3(int numberOfRows) {
-        String pattern = "";
+        StringBuilder pattern = new StringBuilder();
 
         for (int i = numberOfRows; i >= 1; i--) {
-            for (int k = 1; k <= numberOfRows - i; k++) {
-                pattern += " ";
-            }
-            for (int j = 1; j <= i; j++) {
-                pattern += "*";
-            }
-            pattern += "\n";
+            pattern.append(" ".repeat(Math.max(0, numberOfRows - i)));
+            pattern.append("*".repeat(i));
+            pattern.append("\n");
         }
-        return pattern;
+        return pattern.toString();
     }
 
     public String pattern4(int numberOfRows) {
-        String pattern = "";
+        StringBuilder pattern = new StringBuilder();
 
         for (int i = 1; i <= numberOfRows; i++) {
-            for (int k = 1; k <= numberOfRows - i; k++) {
-                pattern += " ";
-            }
-            for (int j = 1; j <= i; j++) {
-                pattern += "*";
-            }
-            pattern += "\n";
+            pattern.append(" ".repeat(Math.max(0, numberOfRows - i)));
+            pattern.append("*".repeat(Math.max(0, i)));
+            pattern.append("\n");
         }
-        return pattern;
+        return pattern.toString();
     }
 
     public String allPatterns(int numberOfRows){
-        String pattern = "";
+        StringBuilder pattern = new StringBuilder();
         final int SPACE = 5;
         for(int i = 1; i <= numberOfRows; i++){
-            for (int j = 1; j <= i; j++){
-                pattern += "*";
-            }
-            for (int k = 1; k <= (numberOfRows - i) + SPACE; k++){
-                pattern += " ";
-            }
-            for (int j = 1; j <= numberOfRows + 1 - i; j++){
-                pattern += "*";
-            }
-            for (int k = 1; k <= SPACE + 2 * (i - 1); k++){
-                pattern += " ";
-            }
-            for (int j = 1; j <= numberOfRows + 1 - i; j++){
-                pattern += "*";
-            }
+            pattern.append("*".repeat(Math.max(0, i)));
+            String repeatSpace = " ".repeat(Math.max(0, (numberOfRows - i) + SPACE));
+            pattern.append(repeatSpace);
+            String repeatCharacter = "*".repeat(Math.max(0, numberOfRows + 1 - i));
+            pattern.append(repeatCharacter);
+            pattern.append(" ".repeat(Math.max(0, SPACE + 2 * (i - 1))));
+            pattern.append(repeatCharacter);
 
-            for (int k = 1; k <= (numberOfRows - i) + SPACE; k++){
-                pattern += " ";
-            }
+            pattern.append(repeatSpace);
 
-            for (int j = 1; j <= i; j++){
-                pattern += "*";
-            }
+            pattern.append("*".repeat(Math.max(0, i)));
 
-            pattern += "\n";
+            pattern.append("\n");
         }
-        return pattern;
+        return pattern.toString();
     }
 
 }
