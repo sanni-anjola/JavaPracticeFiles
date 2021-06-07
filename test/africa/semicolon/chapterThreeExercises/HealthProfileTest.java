@@ -3,8 +3,7 @@ package africa.semicolon.chapterThreeExercises;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -106,10 +105,9 @@ public class HealthProfileTest {
 
     @Test
     void testThatHealthProfileCanGetAge(){
-        Calendar calendar = new GregorianCalendar();
-        int currentYear = calendar.get(Calendar.YEAR);
+        LocalDate today = LocalDate.now();
 
-        assertEquals(currentYear - healthProfile.getYear(), healthProfile.getAge());
+        assertEquals(today.getYear() - healthProfile.getYear(), healthProfile.getAge());
     }
 
     @Test

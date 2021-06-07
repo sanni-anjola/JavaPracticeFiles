@@ -1,7 +1,6 @@
 package africa.semicolon.chapterThreeExercises;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
 
 public class HealthProfile {
     private String firstName;
@@ -148,8 +147,8 @@ public class HealthProfile {
     }
 
     public int getAge() {
-        Calendar calendar = new GregorianCalendar();
-        return calendar.get(Calendar.YEAR) - this.getYear();
+        LocalDate today = LocalDate.now();
+        return today.getYear() - this.getYear();
     }
 
     public int getMaximumHeartRate() {
@@ -165,15 +164,12 @@ public class HealthProfile {
     }
 
     public double bmi() {
-        double bmi = (this.weight * 703) / (height * height);
-        return bmi;
+        return (this.weight * 703) / (height * height);
     }
 
     public String displayHealthProfile(){
 
-        String healthProfileDisplay = String.format("Name: %s %s%nGender: %s%nDate Of Birth: %s%nAge: %d%nMaximum Heart Rate: %d%nTarget HeartRate Range: %s%nBMI: %.2f",
+        return String.format("Name: %s %s%nGender: %s%nDate Of Birth: %s%nAge: %d%nMaximum Heart Rate: %d%nTarget HeartRate Range: %s%nBMI: %.2f",
                 this.lastName, this.firstName, this.gender, this.getDateOfBirth(), this.getAge(), this.getMaximumHeartRate(), this.getTargetHeartRateRange(), this.bmi());
-
-        return healthProfileDisplay;
     }
 }

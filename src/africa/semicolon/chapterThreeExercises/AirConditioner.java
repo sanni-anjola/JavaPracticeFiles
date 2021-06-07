@@ -3,11 +3,10 @@ package africa.semicolon.chapterThreeExercises;
 public class AirConditioner {
 
 
-    private String productName;
+    private final String productName;
     private boolean isOn;
     private int temperature;
     private final int LOWEST_TEMPERATURE = 16;
-    private final int HIGHEST_TEMPERATURE = 30;
 
     public AirConditioner(String productName) {
         this.productName = productName;
@@ -27,6 +26,7 @@ public class AirConditioner {
     }
 
     public void increaseTemperature() {
+        int HIGHEST_TEMPERATURE = 30;
         if(isOn && this.temperature < HIGHEST_TEMPERATURE){
             this.temperature++;
         }
