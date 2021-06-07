@@ -31,7 +31,7 @@ public class AirConditionerApplication {
                 case 2: // Increase temperature
                     if(ac.isOn()) {
                         ac.increaseTemperature();
-                        System.out.printf("AC is now on temperature %d\u00B0C", ac.getTemperature());
+                        System.out.printf("AC is now on temperature %d\u00B0C%n", ac.getTemperature());
                     }else {
                         System.out.println("AC is Off, cannot increase temperature");
                     }
@@ -39,7 +39,7 @@ public class AirConditionerApplication {
                 case 3: // Decrease temperature
                     if(ac.isOn()) {
                         ac.decreaseTemperature();
-                        System.out.printf("AC is now on temperature %d\u00B0C", ac.getTemperature());
+                        System.out.printf("AC is now on temperature %d\u00B0C%n", ac.getTemperature());
                     }else {
                         System.out.println("AC is Off, cannot decrease temperature");
                     }
