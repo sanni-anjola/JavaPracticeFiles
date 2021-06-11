@@ -4,10 +4,7 @@ public class Kata {
     public boolean isPalindrome(int number) {
         number = Math.abs(number);
 
-        if(number != getReversedNumber(number)){
-            return false;
-        }
-        return true;
+        return number == getReversedNumber(number);
     }
 
     private int getReversedNumber(int number) {
@@ -87,11 +84,11 @@ public class Kata {
 
     public String reverseNumber(int number) {
        String numberString = String.format("%d", number);
-       String reversedNumber = "";
+       StringBuilder reversedNumber = new StringBuilder();
        for (int i = numberString.length() - 1; i >= 0; i--){
-           reversedNumber += numberString.charAt(i);
+           reversedNumber.append(numberString.charAt(i));
        }
-       return reversedNumber;
+       return reversedNumber.toString();
 
     }
 
@@ -102,5 +99,14 @@ public class Kata {
             factorial *= i;
         }
         return factorial;
+    }
+
+    public String decimalToAnyBase(int decimalNumber, int base) {
+        StringBuilder result = new StringBuilder();
+        while (decimalNumber != 0){
+            result.insert(0, (decimalNumber % base));
+            decimalNumber /= base;
+        }
+        return result.toString();
     }
 }

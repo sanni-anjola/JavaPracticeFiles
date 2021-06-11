@@ -20,7 +20,7 @@ public class Factorial {
             return 0;
         }
         double e = 0;
-        for (int i = numberOfTerms; i > 1; i--) {
+        for (int i = numberOfTerms; i >= 1; i--) {
             e += 1.0 / factorial(i);
         }
         return e;
@@ -45,7 +45,7 @@ public class Factorial {
         int userInput = scanner.nextInt();
         System.out.printf("The factorial of %d is %d%n", userInput, factorial.factorial(userInput));
 
-        System.out.print("Enter a number of terms of exponental constant: ");
+        System.out.print("Enter a number of terms of exponential constant: ");
         userInput = scanner.nextInt();
 
         System.out.printf("The approximate value of e for %d terms is %f%n", userInput, factorial.computeE(userInput));

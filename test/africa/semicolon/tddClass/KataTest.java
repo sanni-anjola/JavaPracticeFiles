@@ -185,4 +185,10 @@ public class KataTest {
         assertEquals(1, kata.findFactorialOf(-5));
         assertEquals(1, kata.findFactorialOf(0));
     }
+
+    @Test
+    void testThatDecimalToBinaryWorks(){
+        assertEquals("101", kata.decimalToAnyBase(5, 2));
+        assertEquals("1101", kata.decimalToAnyBase(13, 2));
+    }
 }
