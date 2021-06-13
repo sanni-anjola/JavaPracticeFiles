@@ -1,13 +1,13 @@
 package africa.semicolon.tddClass;
 
 public class Kata {
-    public boolean isPalindrome(int number) {
+    public static boolean isPalindrome(int number) {
         number = Math.abs(number);
 
         return number == getReversedNumber(number);
     }
 
-    private int getReversedNumber(int number) {
+    private static int getReversedNumber(int number) {
         int reversedNumber = 0;
         int numberOfDigits = (int)Math.log10(number) + 1;
         for(int i = 1; i <= numberOfDigits; i++){
@@ -20,7 +20,7 @@ public class Kata {
 
 
 
-    public char getGrade(int score) {
+    public static char getGrade(int score) {
 
         if(score >= 90){
             return 'A';
@@ -35,7 +35,7 @@ public class Kata {
         }
     }
 //    TestDriller
-    public int getTotalAmountForTestDriller(int copies){
+    public static int getTotalAmountForTestDriller(int copies){
         int amountPerDrill = 0;
         if(copies > 0) {
             if (copies >= 200) {
@@ -58,7 +58,7 @@ public class Kata {
 
     }
 
-    public int getProfit(int copies){
+    public static int getProfit(int copies){
         final int AMOUNT_PER_DRILL = 2000;
         int profit = 0;
         if(copies > 0) {
@@ -68,7 +68,7 @@ public class Kata {
         return profit;
     }
 
-    public int computeNumberOfFactors(int number) {
+    public static int computeNumberOfFactors(int number) {
         int lowerLimit = 1;
         int numberOfFactors = 0;
         int upperLimit = number / 2;
@@ -82,7 +82,7 @@ public class Kata {
         return numberOfFactors;
     }
 
-    public String reverseNumber(int number) {
+    public static String reverseNumber(int number) {
        String numberString = String.format("%d", number);
        StringBuilder reversedNumber = new StringBuilder();
        for (int i = numberString.length() - 1; i >= 0; i--){
@@ -92,7 +92,7 @@ public class Kata {
 
     }
 
-    public int findFactorialOf(int number) {
+    public static int findFactorialOf(int number) {
         int factorial = 1;
 
         for(int i = number; i > 1; i--){
@@ -101,7 +101,7 @@ public class Kata {
         return factorial;
     }
 
-    public String decimalToAnyBase(int decimalNumber, int base) {
+    public static String decimalToAnyBase(int decimalNumber, int base) {
         StringBuilder result = new StringBuilder();
         while (decimalNumber != 0){
             result.insert(0, (decimalNumber % base));
