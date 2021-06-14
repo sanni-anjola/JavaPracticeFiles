@@ -7,15 +7,15 @@ public class PerfectNumbers {
 
     public static String getFactors(int number){
         int factor = 1;
-        String factors = "";
+        StringBuilder factors = new StringBuilder();
         int upperLimit = number / 2;
         while (factor <= upperLimit) {
             if (number % factor == 0) {
-                factors += factor + " ";
+                factors.append(factor).append(" ");
             }
             factor++;
         }
-        return factors;
+        return factors.toString();
     }
     public static int computeSumOfFactors(int number) {
         int factor = 1;
