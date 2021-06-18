@@ -183,4 +183,19 @@ public class KataTest {
         assertEquals("101", Kata.decimalToAnyBase(5, 2));
         assertEquals("1101", Kata.decimalToAnyBase(13, 2));
     }
+
+    @Test
+    void testThatFindMaximumFromReturnsTheMaxOfAnArray(){
+        assertEquals(9, Kata.findMaximumFrom(new int[]{1,3,2,9,6,5,8}));
+    }
+
+    @Test
+    void testThatFindMinimumFromReturnsTheMaxOfAnArray(){
+        assertEquals(-6, Kata.findMinimumFrom(new int[]{1,3,2,9,-6,5,8}));
+    }
+
+    @Test
+    void testThatFindAverageOfReturnsTheMaxOfAnArray(){
+        assertEquals(5.0, Kata.findAverageOf(new int[]{1,3,7,2,9,6,5,8,4,5}), 0.01);
+    }
 }

@@ -13,21 +13,21 @@ public class TableOfBinOctAndHex {
 //        return result;
 //    }
 
-    public static String decToAnyBase(int number, int base){
-        StringBuilder res = new StringBuilder();
+    public static String convertdecNumberToAnyBase(int decimalNumber, int base){
+        StringBuilder result = new StringBuilder();
 
-        while (number != 0){
-            int digit = number % base;
+        while (decimalNumber != 0){
+            int digit = decimalNumber % base;
             if(digit >= 0 && digit <= 9){
-                res.insert(0, digit);
+                result.insert(0, digit);
             }
             if(digit >= 10){
                char digitChar = (char) (digit - 10 + 'A');
-               res.insert(0, digitChar);
+               result.insert(0, digitChar);
             }
 
-            number /= base;
+            decimalNumber /= base;
         }
-        return res.toString();
+        return result.toString();
     }
 }

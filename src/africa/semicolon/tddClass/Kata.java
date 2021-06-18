@@ -109,4 +109,32 @@ public class Kata {
         }
         return result.toString();
     }
+
+    public static int findMaximumFrom(int[] numbers) {
+        int max = numbers[0];
+        for(int number : numbers){
+            if(number > max){
+                max = number;
+            }
+        }
+        return max;
+    }
+
+    public static int findMinimumFrom(int[] numbers) {
+        int min = numbers[0];
+        for(int number : numbers){
+            if(number < min){
+                min = number;
+            }
+        }
+        return min;
+    }
+
+    public static double findAverageOf(int[] numbers) {
+        double sum = 0;
+        for(int number : numbers){
+                sum += number;
+        }
+        return sum / numbers.length;
+    }
 }

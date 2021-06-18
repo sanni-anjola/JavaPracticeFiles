@@ -34,9 +34,9 @@ public class PerfectNumbers {
         System.out.printf("%7s | %7s%n", "Number", "Factors");
         System.out.println("_".repeat(35));
         for (int i = 1; i <= 1000; i++) {
-            if(isPerfect(i)) {
+            if(isPerfect(i))
                 System.out.printf("%-7d | %-7s%n", i, getFactors(i));
-            }
+
         }
     }
 }
