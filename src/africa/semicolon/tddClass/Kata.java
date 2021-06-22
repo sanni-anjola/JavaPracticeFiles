@@ -131,10 +131,22 @@ public class Kata {
     }
 
     public static double findAverageOf(int[] numbers) {
+        return getSumOf(numbers)/ numbers.length;
+    }
+
+    private static double getSumOf(int[] numbers) {
         double sum = 0;
         for(int number : numbers){
                 sum += number;
         }
-        return sum / numbers.length;
+        return sum;
+    }
+
+    public static int findMaximumSum(int[] intArrays) {
+        return (int)getSumOf(intArrays) - findMinimumFrom(intArrays);
+    }
+
+    public static int findMinimumSum(int[] intArrays) {
+        return (int)getSumOf(intArrays) - findMaximumFrom(intArrays);
     }
 }

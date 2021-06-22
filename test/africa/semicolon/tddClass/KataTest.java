@@ -198,4 +198,14 @@ public class KataTest {
     void testThatFindAverageOfReturnsTheMaxOfAnArray(){
         assertEquals(5.0, Kata.findAverageOf(new int[]{1,3,7,2,9,6,5,8,4,5}), 0.01);
     }
+
+    @Test
+    void FindMaximumSumWithOneLessNumber(){
+        assertEquals(14, Kata.findMaximumSum(new int[]{1, 2, 3, 4, 5}));
+    }
+
+    @Test
+    void FindMinimumSumWithOneLessNumber(){
+        assertEquals(10, Kata.findMinimumSum(new int[]{1, 2, 3, 4, 5}));
+    }
 }

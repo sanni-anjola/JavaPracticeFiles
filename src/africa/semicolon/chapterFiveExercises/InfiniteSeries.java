@@ -1,6 +1,7 @@
 package africa.semicolon.chapterFiveExercises;
 
 public class InfiniteSeries {
+
     public static void main(String[] args) {
 //        double series = 0;
 //        for (int i = 0, j = 1; i < 200000; i++, j+=2) {
