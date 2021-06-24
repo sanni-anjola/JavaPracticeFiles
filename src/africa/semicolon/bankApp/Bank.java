@@ -1,2 +1,4 @@
-package africa.semicolon.bankApp;public class Bank {
+package africa.semicolon.bankApp;
+
+public class Bank {
 }
