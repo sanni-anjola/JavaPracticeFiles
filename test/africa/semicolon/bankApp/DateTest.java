@@ -67,7 +67,7 @@ class DateTest {
 
     @Test
     void testThatDateCanGetDateOfBirth(){
-        assertEquals("23/06/1998", date.getDateOfBirth());
+        assertEquals("23/06/1998", date.toString());
     }
 
     @Test

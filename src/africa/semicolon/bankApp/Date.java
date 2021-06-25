@@ -95,7 +95,7 @@ public class Date implements Cloneable{
             return this.year;
         }
 
-        public String getDateOfBirth() {
+        public String toString() {
             return String.format("%02d/%02d/%04d", this.day, this.month, this.year);
         }
 

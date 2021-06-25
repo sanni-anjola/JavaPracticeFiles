@@ -68,7 +68,7 @@ class CustomerTest {
     @Test
     void testThatCustomerHasADateOfBirth(){
         try {
-            assertEquals("22/02/1986", customer.getDate().getDateOfBirth());
+            assertEquals("22/02/1986", customer.getDateOfBirth().toString());
 
         }catch (CloneNotSupportedException ex){
             ex.getMessage();
@@ -78,8 +78,8 @@ class CustomerTest {
     @Test
     void testThatCustomerCanSetDateOfBirth(){
         try {
-            customer.setDate(new Date(24, 5, 2001));
-            assertEquals("24/05/2001", customer.getDate().getDateOfBirth());
+            customer.setDateOfBirth(new Date(24, 5, 2001));
+            assertEquals("24/05/2001", customer.getDateOfBirth().toString());
 
         }catch (CloneNotSupportedException ex){
             ex.getMessage();
@@ -89,12 +89,12 @@ class CustomerTest {
     @Test
     void testThatCustomerCannotMutateDateObject(){
         try {
-            customer.setDate(new Date(24, 5, 2001));
-            assertEquals("24/05/2001", customer.getDate().getDateOfBirth());
+            customer.setDateOfBirth(new Date(24, 5, 2001));
+            assertEquals("24/05/2001", customer.getDateOfBirth().toString());
 
-            customer.getDate().setDay(12);
-            customer.getDate().setMonth(7);
-            assertNotEquals("12/07/2001", customer.getDate().getDateOfBirth());
+            customer.getDateOfBirth().setDay(12);
+            customer.getDateOfBirth().setMonth(7);
+            assertNotEquals("12/07/2001", customer.getDateOfBirth().toString());
 
         }catch (CloneNotSupportedException ex){
             ex.getMessage();

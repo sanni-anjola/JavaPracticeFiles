@@ -4,16 +4,16 @@ package africa.semicolon.bankApp;
 public class Customer {
     private final String firstName;
     private final String lastName;
-    private String phoneNumber;
+    private final String phoneNumber;
     private Address address;
-    private Date date;
+    private Date dateOfBirth;
 
-    public Customer(String firstName, String lastName, String phoneNumber, Address address, Date date) {
+    public Customer(String firstName, String lastName, String phoneNumber, Address address, Date dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.address = address;
-        this.date = date;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getFirstName() {
@@ -32,12 +32,12 @@ public class Customer {
         this.address = address;
     }
 
-    public Date getDate() throws CloneNotSupportedException{
-        return (Date) date.clone();
+    public Date getDateOfBirth() throws CloneNotSupportedException{
+        return (Date) dateOfBirth.clone();
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getPhoneNumber() {
