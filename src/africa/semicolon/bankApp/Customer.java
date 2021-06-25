@@ -4,12 +4,14 @@ package africa.semicolon.bankApp;
 public class Customer {
     private final String firstName;
     private final String lastName;
+    private String phoneNumber;
     private Address address;
     private Date date;
 
-    public Customer(String firstName, String lastName, Address address, Date date) {
+    public Customer(String firstName, String lastName, String phoneNumber, Address address, Date date) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
         this.address = address;
         this.date = date;
     }
@@ -36,5 +38,9 @@ public class Customer {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 }
