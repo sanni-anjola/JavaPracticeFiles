@@ -10,18 +10,25 @@ class CustomerTest {
     @BeforeEach
     void setUp(){
         Date date = new Date(22, 2, 1986);
+
         Address address = new Address(50, "Oseni Salawu Street", "Egan");
         customer = new Customer("Moyosore", "Onigbanjo", "07001404017", address, date);
     }
 
     @Test
     void testThatCustomerHasAFirstName(){
+
         assertEquals("Moyosore", customer.getFirstName());
     }
 
     @Test
     void testThatCustomerHasALastName(){
         assertEquals("Onigbanjo", customer.getLastName());
+    }
+
+    @Test
+    void testThatCustomerCanProvideFullName(){
+        assertEquals("Moyosore Onigbanjo", customer.getFullName());
     }
 
     @Test
@@ -99,5 +106,11 @@ class CustomerTest {
         }catch (CloneNotSupportedException ex){
             ex.getMessage();
         }
+    }
+
+    @Test
+    void testThatCustomerHasAnAccount() throws CloneNotSupportedException{
+        assertNotNull(customer.getCustomerAccount());
+        assertTrue(customer.getCustomerAccount() instanceof Account);
     }
 }

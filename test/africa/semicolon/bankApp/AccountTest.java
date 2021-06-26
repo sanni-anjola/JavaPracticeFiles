@@ -79,4 +79,15 @@ class AccountTest {
         assertEquals(new BigDecimal("400.00"), account1.getBalance());
     }
 
+    @Test
+    void testThatAccountPinCanBeChanged(){
+        account.changeAccountPin("1111", "0000");
+        assertEquals("0000", account.getAccountPin());
+    }
+
+    @Test
+    void testThatAccountPinDoesNotChangeWithAWrongOldPin(){
+        account.changeAccountPin("1110", "0000");
+        assertNotEquals("0000", account.getAccountPin());
+    }
 }

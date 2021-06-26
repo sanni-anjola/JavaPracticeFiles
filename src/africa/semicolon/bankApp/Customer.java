@@ -7,6 +7,7 @@ public class Customer {
     private final String phoneNumber;
     private Address address;
     private Date dateOfBirth;
+    private final Account customerAccount;
 
     public Customer(String firstName, String lastName, String phoneNumber, Address address, Date dateOfBirth) {
         this.firstName = firstName;
@@ -14,6 +15,7 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
+        this.customerAccount = new Account();
     }
 
     public String getFirstName() {
@@ -42,5 +44,22 @@ public class Customer {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public String getFullName(){
+        return firstName + " " + lastName;
+    }
+
+    public Account getCustomerAccount() throws CloneNotSupportedException{
+        return (Account) customerAccount.clone();
+    }
+
+    @Override
+    public String toString(){
+        try {
+            return firstName + " " + lastName + " with Account Number " + getCustomerAccount();
+        }catch (CloneNotSupportedException ex){
+           return ex.getMessage();
+        }
     }
 }

@@ -3,7 +3,7 @@ package africa.semicolon.bankApp;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Account {
+public class Account implements Cloneable{
     private BigDecimal balance;
     private static int numberOfAccounts;
     private final int accountNumber;
@@ -17,12 +17,6 @@ public class Account {
         balance = BigDecimal.ZERO;
         accountPin = "1111";
 
-    }
-
-    public boolean changeAccountPin(String oldAccountPin, String newAccountPin) {
-        if(!(oldAccountPin.equals(newAccountPin))) return false;
-        this.accountPin = newAccountPin;
-        return true;
     }
 
     public Account(){
@@ -67,5 +61,23 @@ public class Account {
 
     static void resetNumberOfAccounts(){
         numberOfAccounts = 0;
+    }
+
+    public void changeAccountPin(String oldAccountPin, String newAccountPin) {
+        if(!accountPin.equals(oldAccountPin)) return;
+        this.accountPin = newAccountPin;
+    }
+
+    public String getAccountPin() {
+        return accountPin;
+    }
+
+    public Object clone() throws CloneNotSupportedException{
+        return super.clone();
+    }
+
+    @Override
+    public String toString(){
+        return "" + getAccountNumber();
     }
 }
