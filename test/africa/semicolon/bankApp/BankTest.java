@@ -62,5 +62,20 @@ class BankTest {
         assertFalse(bank.isBankCustomer(ayo));
     }
 
+    @Test
+    void testThatBankCanSearchForCustomerByName(){
+        Customer kayode = bank.findCustomerByName("Kayode Alogba");
+        assertNotNull(kayode);
+        Customer unknownCustomer = bank.findCustomerByName("Unknown Customer");
+        assertNull(unknownCustomer);
+    }
+
+    @Test
+    void testThatBankCanSearchForCustomerByAccountNumber(){
+        Customer kayode = bank.findCustomerByAccountNumber(1);
+        assertNotNull(kayode);
+        Customer unknownCustomer = bank.findCustomerByAccountNumber(-1);
+        assertNull(unknownCustomer);
+    }
 
 }

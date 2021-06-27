@@ -50,16 +50,12 @@ public class Customer {
         return firstName + " " + lastName;
     }
 
-    public Account getCustomerAccount() throws CloneNotSupportedException{
-        return (Account) customerAccount.clone();
+    public Account getCustomerAccount(){
+        return customerAccount;
     }
 
     @Override
     public String toString(){
-        try {
             return firstName + " " + lastName + " with Account Number " + getCustomerAccount();
-        }catch (CloneNotSupportedException ex){
-           return ex.getMessage();
-        }
     }
 }

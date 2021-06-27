@@ -104,8 +104,13 @@ public class Date implements Cloneable{
             return today.getYear() - this.getYear();
         }
 
-        public Object clone() throws CloneNotSupportedException{
-            return super.clone();
+        @Override
+        public Object clone(){
+            try {
+                return super.clone();
+            }catch (CloneNotSupportedException ex){
+                return null;
+            }
         }
 
 }

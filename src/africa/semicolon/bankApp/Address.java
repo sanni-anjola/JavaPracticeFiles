@@ -57,7 +57,12 @@ public class Address implements Cloneable{
         return String.format("%d %s, %s, %s.", houseNumber, streetName, city, state);
     }
 
-    public Object clone() throws CloneNotSupportedException{
-        return super.clone();
+    @Override
+    public Object clone(){
+        try {
+            return super.clone();
+        }catch (CloneNotSupportedException ex){
+            return null;
+        }
     }
 }

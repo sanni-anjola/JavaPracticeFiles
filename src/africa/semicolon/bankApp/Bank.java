@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Bank {
     private final String bankName;
     private ArrayList<Customer> bankCustomers = new ArrayList<>();
-    static Staff bankStaff = new Staff("Priest", "Oluwatobi");
+    private Staff bankStaff = new Staff("Priest", "Oluwatobi");
 
     public Bank(String bankName){
         this.bankName = bankName;
@@ -39,5 +39,23 @@ public class Bank {
 
     public boolean isBankCustomer(Customer customer){
         return bankCustomers.contains(customer);
+    }
+
+    public Customer findCustomerByName(String name){
+        for (Customer bankCustomer : bankCustomers) {
+            if (bankCustomer.getFullName().equalsIgnoreCase(name)) {
+                return bankCustomer;
+            }
+        }
+        return null;
+    }
+
+    public Customer findCustomerByAccountNumber(int accountNumber){
+        for (Customer bankCustomer : bankCustomers) {
+            if (bankCustomer.getCustomerAccount().getAccountNumber() == accountNumber) {
+                return bankCustomer;
+            }
+        }
+        return null;
     }
 }

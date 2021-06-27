@@ -109,7 +109,7 @@ class CustomerTest {
     }
 
     @Test
-    void testThatCustomerHasAnAccount() throws CloneNotSupportedException{
+    void testThatCustomerHasAnAccount(){
         assertNotNull(customer.getCustomerAccount());
         assertTrue(customer.getCustomerAccount() instanceof Account);
     }
