@@ -215,6 +215,7 @@ public class BankApplication {
                 case 6: // logout
                     break;
                 case 7: // close account
+                    bank.removeCustomer(customer);
                     break;
                 default:
                     System.out.println("Invalid Option, try again");
