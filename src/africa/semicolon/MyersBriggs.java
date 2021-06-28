@@ -1,6 +1,5 @@
 package africa.semicolon;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MyersBriggs {
@@ -93,12 +92,22 @@ public class MyersBriggs {
 
         }
 
-//        System.out.printf("|%5s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s |", " ", "A", "B",
-//                " ", "A", "B", " ", "A", "B", " ", "A", "B");
-//        questionNumber = 1;
-//        for (int i = 0; i < extroversion.length; i++) {
-//
-//        }
+        System.out.printf("|%5s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s |%n", " ", "A", "B",
+                " ", "A", "B", " ", "A", "B", " ", "A", "B");
+        System.out.printf("%s%n", "-".repeat(74));
+        questionNumber = 1;
+        for (int i = 0; i < extroversion.length; i++) {
+            System.out.printf("|%5d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s |%n", questionNumber++, placeCheckmark(extroversion[i], 1), placeCheckmark(extroversion[i], 2),
+                    questionNumber++, placeCheckmark(sensing[i], 1), placeCheckmark(sensing[i], 2), questionNumber++,
+                    placeCheckmark(thinking[i], 1), placeCheckmark(thinking[i], 2), questionNumber++,
+                    placeCheckmark(judging[i], 1), placeCheckmark(judging[i], 2));
+        }
+        System.out.printf("%s%n", "-".repeat(74));
+        System.out.printf("|%5s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d |%n", "TOTAL", countNumbers(extroversion, 1), countNumbers(extroversion, 0),
+                " ", countNumbers(sensing, 1), countNumbers(sensing, 0), " ", countNumbers(thinking, 1), countNumbers(thinking, 0), " ", countNumbers(judging, 1), countNumbers(judging, 0));
+        System.out.printf("%s%n", "-".repeat(74));
+        System.out.printf("|%5s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s |%n", " ", "E", "I",
+                " ", "S", "N", " ", "T", "F", " ", "J", "P");
 
         if(sum(extroversion) < 3){
             result.append("I");
@@ -124,18 +133,26 @@ public class MyersBriggs {
             result.append("J");
         }
 
-
-        System.out.println(Arrays.toString(extroversion));
-        System.out.println(Arrays.toString(sensing));
-        System.out.println(Arrays.toString(thinking));
-        System.out.println(Arrays.toString(judging));
-
-        System.out.println(result);
+        System.out.println("Your personality type is " + result);
+        System.out.print("For your personality interpretation, visit : ");
+        System.out.println("https://www.truity.com/page/16-personality-types-myers-briggs");
     }
 
     public static int sum(int[] intArrays){
         int sum = 0;
         for(int number : intArrays) sum += number;
         return sum;
+    }
+
+    public static String placeCheckmark(int num, int position){
+        return (num == 1 && position == 1) || (num == 0 && position == 2) ? String.format("%c", '\u2713') : "";
+    }
+
+    public static int countNumbers(int[] numArray, int number){
+        int count = 0;
+        for(int num : numArray){
+            if(num == number) count++;
+        }
+        return count;
     }
 }
