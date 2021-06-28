@@ -46,12 +46,13 @@ public class BankApplication {
                                 #                3. Logout                                      #
                                 #################################################################
                                 """;
+                        int staffInput;
                         do {
                             System.out.println(staffWelcomePage);
-                            input = getInputFrom(inputCollector);
+                            staffInput = getInputFrom(inputCollector);
                             inputCollector.nextLine();
 
-                            switch (input) {
+                            switch (staffInput) {
                                 case 1 : { // View Bank Accounts
                                     viewAccounts(bank);
                                     break;
@@ -63,7 +64,7 @@ public class BankApplication {
                                 case 3 : break;
                                 default : System.out.println("Invalid Option, try again");
                             }
-                        } while (input != 3);
+                        } while (staffInput != 3);
                     } else {
                         System.out.println("Incorrect login details");
                     }
@@ -82,10 +83,11 @@ public class BankApplication {
                             #                3. Go back                                     #
                             #################################################################
                             """;
+                    int customerInput;
                     do {
                         System.out.println(customerWelcomePage);
-                        input = getInputFrom(inputCollector);
-                        switch (input) {
+                        customerInput = getInputFrom(inputCollector);
+                        switch (customerInput) {
                             case 1: // Create Account
                                 Customer newCustomer = getCustomerDetailsFrom(inputCollector);
                                 if(newCustomer != null){
@@ -116,10 +118,9 @@ public class BankApplication {
                             default:
                                 System.out.println("Invalid Option, try again");
                         }
-                    } while (input != 3);
+                    } while (customerInput != 3);
                 }
             }
-
             }while (input != 3);
 
     }
