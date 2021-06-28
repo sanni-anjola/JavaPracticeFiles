@@ -66,28 +66,28 @@ public class MyersBriggs {
             System.out.println("A. " + extroversionQuestions[i][0]);
             System.out.println("B. " + extroversionQuestions[i][1]);
             System.out.println("Pick an option: A or B");
-            String option = scanner.nextLine();
+            String option = getOption(scanner);
             if(option.equalsIgnoreCase("A")) extroversion[i] = 1;
 
             System.out.printf("Question %d%n", questionNumber++);
             System.out.println("A. " + sensingQuestions[i][0]);
             System.out.println("B. " + sensingQuestions[i][1]);
             System.out.println("Pick an option: A or B");
-            option = scanner.nextLine();
+            option = getOption(scanner);
             if(option.equalsIgnoreCase("A")) sensing[i] = 1;
 
             System.out.printf("Question %d%n", questionNumber++);
             System.out.println("A. " + thinkingQuestions[i][0]);
             System.out.println("B. " + thinkingQuestions[i][1]);
             System.out.println("Pick an option: A or B");
-            option = scanner.nextLine();
+            option = getOption(scanner);
             System.out.printf("Question %d%n", questionNumber++);
             if(option.equalsIgnoreCase("A")) thinking[i] = 1;
 
             System.out.println("A. " + judgingQuestions[i][0]);
             System.out.println("B. " + judgingQuestions[i][1]);
             System.out.println("Pick an option: A or B");
-            option = scanner.nextLine();
+            option = getOption(scanner);
             if(option.equalsIgnoreCase("A")) judging[i] = 1;
 
         }
@@ -154,5 +154,25 @@ public class MyersBriggs {
             if(num == number) count++;
         }
         return count;
+    }
+
+    public static String getOptionAOrB(String option){
+        if(option.equalsIgnoreCase("A") || option.equalsIgnoreCase("B")){
+            return option;
+        }else {
+            throw new IllegalArgumentException("Wrong choice; choose A or B");
+        }
+    }
+    public static String getOption(Scanner scanner){
+        String option;
+        while (true){
+            try {
+                option = getOptionAOrB(scanner.nextLine());
+                return option;
+            }catch (IllegalArgumentException ex){
+                System.err.println(ex.getMessage());
+            }
+
+        }
     }
 }
