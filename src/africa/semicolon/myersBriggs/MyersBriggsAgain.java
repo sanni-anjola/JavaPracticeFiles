@@ -1,5 +1,6 @@
 package africa.semicolon.myersBriggs;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MyersBriggsAgain {
@@ -49,7 +50,7 @@ public class MyersBriggsAgain {
         questionnaire[19][0] = "control, govern";
         questionnaire[19][1] = "latitude, freedom";
 
-        int[] answers = new int[20];
+        int[] responses = new int[20];
         String option;
 
         for (int i = 0; i < questionnaire.length; i++) {
@@ -58,18 +59,17 @@ public class MyersBriggsAgain {
             System.out.println("B. " + questionnaire[i][1]);
             System.out.println("Pick an option: A or B");
             option = getOption(scanner);
-            if (option.equalsIgnoreCase("A")) answers[i] = 1;
+            if (option.equalsIgnoreCase("A")) responses[i] = 1;
 
         }
 
         String[][] personality = {{"E", "I"}, {"S", "N"}, {"T", "F"}, {"J", "P"}};
         int[][] optionsCount = new int[4][2];
         StringBuilder personalityType = new StringBuilder();
-
-        for (int i = 0; i < answers.length/5; i++) {
+        for (int i = 0; i < responses.length/5; i++) {
             int total = 0;
-            for (int j = i; j < answers.length; j+=4) {
-                total += answers[j];
+            for (int j = i; j < responses.length; j+=4) {
+                total += responses[j];
             }
             optionsCount[i][0] = total;
             optionsCount[i][1] = 5 - total;
@@ -85,11 +85,11 @@ public class MyersBriggsAgain {
                 " ", "A", "B", " ", "A", "B", " ", "A", "B");
         System.out.printf("%s%n", "-".repeat(74));
 
-        for (int i = 0; i < answers.length; i += 4) {
-            System.out.printf("|%5d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s |%n", i+1, placeCheckmark(answers[i], 1), placeCheckmark(answers[i], 2),
-                    i+2, placeCheckmark(answers[i+1], 1), placeCheckmark(answers[i+1], 2), i+3,
-                    placeCheckmark(answers[i+2], 1), placeCheckmark(answers[i+2], 2), i+4,
-                    placeCheckmark(answers[i+3], 1), placeCheckmark(answers[i+3], 2));
+        for (int i = 0; i < responses.length; i += 4) {
+            System.out.printf("|%5d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s | %3d | %3s | %3s |%n", i+1, placeCheckmark(responses[i], 1), placeCheckmark(responses[i], 2),
+                    i+2, placeCheckmark(responses[i+1], 1), placeCheckmark(responses[i+1], 2), i+3,
+                    placeCheckmark(responses[i+2], 1), placeCheckmark(responses[i+2], 2), i+4,
+                    placeCheckmark(responses[i+3], 1), placeCheckmark(responses[i+3], 2));
         }
         System.out.printf("%s%n", "-".repeat(74));
         System.out.printf("|%5s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d | %3s | %3d | %3d |%n", "TOTAL", optionsCount[0][0], optionsCount[0][1],
@@ -100,6 +100,8 @@ public class MyersBriggsAgain {
 
         System.out.println("\nYour personality type is " + personalityType);
         System.out.print("For your personality interpretation, visit : ");
+        System.out.println("https://www.truity.com/personality-type/"+personalityType);
+        System.out.print("For all personality types visit: ");
         System.out.println("https://www.truity.com/page/16-personality-types-myers-briggs");
     }
 
