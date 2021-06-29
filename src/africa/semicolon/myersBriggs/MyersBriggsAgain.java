@@ -68,7 +68,7 @@ public class MyersBriggsAgain {
 
         for (int i = 0; i < answers.length/5; i++) {
             int total = 0;
-            for (int j = 0; j < answers.length; j+=4) {
+            for (int j = i; j < answers.length; j+=4) {
                 total += answers[j];
             }
             optionsCount[i][0] = total;
