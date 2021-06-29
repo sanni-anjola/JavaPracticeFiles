@@ -1,4 +1,4 @@
-package africa.semicolon;
+package africa.semicolon.myersBriggs;
 
 import java.util.Scanner;
 
@@ -92,6 +92,7 @@ public class MyersBriggs {
 
         }
 
+        System.out.println("\nYour choice at a glance\n");
         System.out.printf("|%5s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s | %3s |%n", " ", "A", "B",
                 " ", "A", "B", " ", "A", "B", " ", "A", "B");
         System.out.printf("%s%n", "-".repeat(74));
