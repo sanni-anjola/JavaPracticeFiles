@@ -1,6 +1,7 @@
 package africa.semicolon.chapterSevenExercises.turtleGraphics;
 
 public class Pen {
+
     private PenPosition penPosition;
 
     public Pen() {
