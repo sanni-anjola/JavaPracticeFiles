@@ -14,10 +14,10 @@ public class ComputerAssistedInstructions635App {
             int response = scanner.nextInt();
             System.out.println(Arrays.toString(ComputerAssistedInstruction635.values));
             if( ComputerAssistedInstruction635.getAnswer(response)) {
-                System.out.println("Very Good");
+                System.out.println(ComputerAssistedInstruction635.getGoodResponse());
                 question = ComputerAssistedInstruction635.getQuestion();
             } else if(response != -1){
-                System.out.println("No, Try again");
+                System.out.println(ComputerAssistedInstruction635.getResponse());
             }
             if(response == -1) break;
         }
