@@ -4,7 +4,7 @@ public class TurtlePosition {
     private int columnPosition;
     private int rowPosition;
 
-    public int getColunmnPosition() {
+    public int getColumnPosition() {
         return this.columnPosition;
     }
 

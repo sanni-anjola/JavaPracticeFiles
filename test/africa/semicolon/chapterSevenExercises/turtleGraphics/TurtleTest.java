@@ -103,12 +103,12 @@ class TurtleTest {
     void turtleCanMoveForwardWhileFacingEastTest(){
         Turtle turtle = new Turtle();
         TurtlePosition position = turtle.getTurtlePosition();
-        assertEquals(0, position.getColunmnPosition());
+        assertEquals(0, position.getColumnPosition());
         assertEquals(0, position.getRowPosition());
         //when
         turtle.move(5);
         TurtlePosition newPosition = turtle.getTurtlePosition();
-        assertEquals(5, newPosition.getColunmnPosition());
+        assertEquals(5, newPosition.getColumnPosition());
         assertEquals(0, newPosition.getRowPosition());
         //when
     }
@@ -117,14 +117,37 @@ class TurtleTest {
     void turtleCanMoveForwardWhileFacingSouthTest(){
         Turtle turtle = new Turtle();
         TurtlePosition position = turtle.getTurtlePosition();
-        assertEquals(0, position.getColunmnPosition());
+        assertEquals(0, position.getColumnPosition());
         assertEquals(0, position.getRowPosition());
         turtle.turnRight();
         //when
         turtle.move(5);
         TurtlePosition newPosition = turtle.getTurtlePosition();
-        assertEquals(0, newPosition.getColunmnPosition());
+        assertEquals(0, newPosition.getColumnPosition());
         assertEquals(5, newPosition.getRowPosition());
         //when
+    }
+
+    @Test
+    void turtleCanWriteEastWardWhenPenIsDownTest(){
+        // given
+        SketchPad sketchPad = new SketchPad(20, 20);
+        Turtle turtle = new Turtle();
+        turtle.penDown();
+
+        // when
+        turtle.move(5, sketchPad);
+
+        //assert
+        assertEquals(1, sketchPad.getFloor()[0][0]);
+        assertEquals(1, sketchPad.getFloor()[0][1]);
+        assertEquals(1, sketchPad.getFloor()[0][2]);
+        assertEquals(1, sketchPad.getFloor()[0][3]);
+        assertEquals(1, sketchPad.getFloor()[0][4]);
+        assertEquals(0, sketchPad.getFloor()[0][5]);
+
+        TurtlePosition turtlePosition = turtle.getTurtlePosition();
+        assertEquals(4, turtlePosition.getColumnPosition());
+        assertEquals(0, turtlePosition.getRowPosition());
     }
 }
