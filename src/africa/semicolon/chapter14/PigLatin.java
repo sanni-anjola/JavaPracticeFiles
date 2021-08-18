@@ -12,16 +12,15 @@ public class PigLatin {
         String sentence = scanner.nextLine();
 
         String[] words = sentence.split(" ");
-        System.out.println(Arrays.toString(words));
 
         StringBuilder builder = new StringBuilder();
         for(String word : words){
-            builder.append(word.substring(1)).append(word.charAt(0)).append("ay ");
+            builder.append(printLatin(word)).append(" ");
         }
         System.out.println(builder.toString().stripLeading());
     }
 
     public static String printLatin(String word){
-        return word.substring(1, word.length()) + "ay";
+        return word.substring(1) + word.charAt(0) + "ay";
     }
 }
