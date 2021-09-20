@@ -48,7 +48,8 @@ class AccountTest {
 
     @Test
     void testThatAccountCannotDepositANegativeAmount(){
-        assertThrows(IllegalArgumentException.class, () -> account.deposit("-1000.678"));
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> account.deposit("-1000.678"));
+        assertEquals(exception.getLocalizedMessage(), "You cannot deposit negative amount");
         assertNotEquals(new BigDecimal("-1000.68"), account.getBalance());
         assertEquals(new BigDecimal("0.00"), account.getBalance());
     }
