@@ -2,6 +2,7 @@ package africa.semicolon.chapterSevenExercises.miscellaneous.turtle.entities;
 
 import africa.semicolon.chapterSevenExercises.miscellaneous.turtle.enums.CardinalPoint;
 import africa.semicolon.chapterSevenExercises.miscellaneous.turtle.enums.PenPosition;
+import africa.semicolon.chapterSevenExercises.miscellaneous.turtle.exceptions.TurtleException;
 
 public class Turtle {
     private final String name;
@@ -85,8 +86,30 @@ public class Turtle {
             case NORTH -> setDirection(CardinalPoint.WEST);
         }
     }
+    private boolean isABoundary(int xCoord, int yCoord, SketchPad pad){
+        final int SKETCH_PAD_UPPER_LIMIT = pad.getFloor().length - 1;
+        final int SKETCH_PAD_LOWER_LIMIT = 0;
 
-    public void moveForward(int numberOfSteps){
+        return xCoord > SKETCH_PAD_UPPER_LIMIT || xCoord < SKETCH_PAD_LOWER_LIMIT || yCoord > SKETCH_PAD_UPPER_LIMIT || yCoord < SKETCH_PAD_LOWER_LIMIT;
+    }
 
+    public void moveForward(int numberOfSteps) throws TurtleException {
+        int xCoord = xCoordinate;
+        int yCoord = yCoordinate;
+        if(direction.equals(CardinalPoint.EAST)){
+            xCoordinate += numberOfSteps - 1;
+        }else if(direction.equals(CardinalPoint.SOUTH)){
+            yCoordinate += numberOfSteps - 1;
+        }else if(direction.equals(CardinalPoint.WEST)){
+            xCoordinate -= numberOfSteps - 1;
+        }else {
+            yCoordinate -= numberOfSteps - 1;
+        }
+
+        if(isABoundary(xCoordinate, yCoordinate, new SketchPad())){
+            xCoordinate = xCoord;
+            yCoordinate = yCoord;
+            throw new TurtleException("You cannot move beyond the boundaries");
+        }
     }
 }
