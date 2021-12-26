@@ -10,7 +10,6 @@ public class BinarySort {
             for(j = i - 1; j >= 0 && arr[j] > key; j--){
                 arr[j + 1] = arr[j];
             }
-            // Insert the current element into list[k + 1]
             arr[j + 1] = key;
         }
     }
