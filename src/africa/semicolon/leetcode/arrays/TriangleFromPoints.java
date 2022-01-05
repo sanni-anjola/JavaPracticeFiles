@@ -1,5 +1,6 @@
 package africa.semicolon.leetcode.arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class TriangleFromPoints {
@@ -94,5 +95,6 @@ public class TriangleFromPoints {
 
     }
 }
+
 
 
