@@ -8,8 +8,10 @@ public class TestPhase2 {
 		Flight aCFlight = new Commercial();
 		System.out.println("Should print Commercial Flight [a number] has a payload size of 0");
 		System.out.println(aCFlight);
-		
+
 		Flight aFlight = new Industrial();
+
+
 		
 		try {
 			aFlight.book(new Cargo(1));

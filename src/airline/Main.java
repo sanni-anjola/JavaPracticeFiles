@@ -14,8 +14,10 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
         Airline airline = new Airline();
-        final String FILE_NAME = "TestPhase1.txt";
-        readInputFile(FILE_NAME, airline);
+//        final String FILE_NAME = "TestPhase1.txt";
+        final String FILE_NAME2 = "TestPhase4.txt";
+//        readInputFile(FILE_NAME, airline);
+        readInputFile(FILE_NAME2, airline);
     }
 
     private static void readInputFile(String fileName, Airline airline) {
@@ -43,6 +45,12 @@ public class Main {
     }
 
     static void parseCommand(String[] tokens, Airline air) throws InvalidInputException {
-        throw new InvalidInputException("Command not found");
+        if(Objects.equals(tokens[0], "CREATE-FLIGHT")) air.addFlight(tokens[1].charAt(0));
+        else if(Objects.equals(tokens[0], "GET-FLIGHT")) {
+            Flight flight = air.getFlight(Integer.parseInt(tokens[1]));
+            if(flight == null) System.out.println("Flight " + tokens[1] + " not found");
+            else System.out.println(flight);
+        }
+        else throw new InvalidInputException("Command not found");
     }
 }
