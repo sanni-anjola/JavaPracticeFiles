@@ -38,11 +38,11 @@ public class Main {
         }
     }
 
-    private static void processComment(String data) {
+    static void processComment(String data) {
         System.out.println(data);
     }
 
-    private static void parseCommand(String[] tokens, Airline air) throws InvalidInputException {
+    static void parseCommand(String[] tokens, Airline air) throws InvalidInputException {
         throw new InvalidInputException("Command not found");
     }
 }
