@@ -1,16 +1,19 @@
 package airline;
 
 public abstract class Payload extends Item{
+    private double weight;
     public Payload(double wgt) {
         super();
+        this.weight = wgt;
     }
 
     public double getWeight(){
-        // this will have to be updated!
-        return 0;
+        return weight;
     }
 
-    public Payload() {
-        //Delete this constructor once Phase 5 is complete!
+
+    @Override
+    public String toString() {
+        return String.format("ID: %d, Weight: %8.0f kg", id, getWeight());
     }
 }
