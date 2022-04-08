@@ -29,5 +29,14 @@ public class Airline {
         return flights.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
     }
 
+    public void addPayload(Payload thePayload){
+        payloads.add(thePayload);
+    }
+
+    public  Payload getPayload(int id){
+        return payloads.stream().filter(p -> p.getId() == id).findFirst().orElse(null);
+
+    }
+
 
 }

@@ -9,6 +9,7 @@ public abstract class Flight extends Item{
     private final List<Payload> payloadList = new ArrayList<>();
     final int MAX_WEIGHT = 200;
     final int MAX_PAYLOAD = 100;
+    private boolean hasTakenOff;
 
     public Flight() {
         System.out.println(this);
@@ -25,6 +26,21 @@ public abstract class Flight extends Item{
         payloadList.add(payload);
     }
 
+    public boolean canTakeOff(){
+        if(hasTakenOff || payloadList.size() <= 2){
+            return false;
+        }
+
+        Payload payload= payloadList.stream().filter(Employee.class::isInstance).findFirst().orElse(null);
+        return payload != null;
+    }
+
+    public String doTakeOff(){
+        if(canTakeOff()){
+            return String.format("Flight %d can take off", id);
+        }
+        return "Sorry, Flight cannot take off";
+    }
     @Override
     public String toString() {
         return getClass().getSimpleName() + " Flight " + this.getId() +" has a payload of size " + payloadList.size();

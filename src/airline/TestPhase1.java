@@ -1,6 +1,7 @@
 package airline;
 
 
+import airline.exception.InvalidBookingException;
 import airline.exception.InvalidInputException;
 
 public class TestPhase1 {
@@ -27,6 +28,8 @@ public class TestPhase1 {
             // should be here!
             System.out.println("Should print the error message!");
             System.out.println(reason.getMessage());
+        } catch (InvalidBookingException e) {
+            e.printStackTrace();
         }
 
     }

@@ -7,11 +7,12 @@ public class Employee extends Person{
     private static int empIdGen;
     private String job;
 
-    public Employee(String firstName, String lastName, String job) {
-        super(firstName, lastName);
+    public Employee(String firstName, String lastName, double weight, String job) {
+        super(firstName, lastName, weight);
         this.job = job;
         empId = Integer.parseInt(5 + String.format("%08d", empIdGen));
         empIdGen++;
+        System.out.println(this);
     }
 
     public boolean hasJob(String isThisJob){

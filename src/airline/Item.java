@@ -12,6 +12,8 @@ public abstract class Item {
 
     public Item() {
         String className = this.getClass().getSimpleName();
+        if(this instanceof Person)
+            className = "Person";
         Map<String, Integer> classesValue = new HashMap<>(Map.of("Commercial", 1, "Industrial", 2, "Person", 3, "Cargo", 4));
         id = Integer.parseInt(classesValue.get(className) + String.format("%08d", idMap.get(className)));
         idMap.put(className, idMap.get(className) + 1);
