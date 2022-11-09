@@ -9,6 +9,7 @@ public class MyersBriggsAgain {
 
         String[][] questionnaire = new String[20][2];
 
+        String ques = "A. expend energy, enjoy groups \n B. conserve energy, enjoy one-on-one";
         questionnaire[0][0] = "expend energy, enjoy groups";
         questionnaire[0][1] = "conserve energy, enjoy one-on-one";
         questionnaire[1][0] = "interpret literally";

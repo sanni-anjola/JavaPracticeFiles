@@ -1,5 +1,6 @@
 package africa.semicolon.bankApp;
 
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -332,7 +333,7 @@ public class BankApplication {
         else type = "DR";
 
         System.out.printf("Acct: %d%n", customer.getCustomerAccount().getAccountNumber());
-        System.out.printf("Amt: %s %s%n", NumberFormat.getCurrencyInstance().format(amount), type);
+        System.out.printf("Amt: %s %s%n", NumberFormat.getCurrencyInstance().format(new BigDecimal(amount)), type);
         System.out.printf("Available Bal: %s%n", NumberFormat.getCurrencyInstance().format(customer.getCustomerAccount().getBalance()));
     }
 }

@@ -20,6 +20,7 @@ public class DuplicateElimination {
         String temp;
         while (counter < 5){
             System.out.printf("Enter Number %d: \n", counter+1);
+
             try {
                temp = scanner.nextLine();
                temp_int = Integer.parseInt(temp);

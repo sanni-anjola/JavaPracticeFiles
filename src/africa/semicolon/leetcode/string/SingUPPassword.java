@@ -7,7 +7,10 @@ import java.util.stream.Collectors;
 public class SingUPPassword {
 
     public static void main(String[] args) {
-        System.out.println(minimalOperations(List.of("abbaaab", "ab")));
+
+//        System.out.println(minimalOperations(List.of("abbaaab", "ab")));
+
+        System.out.println(fetchItemsToDisplay(List.of(List.of("p1", "1", "2"), List.of("p2", "2", "1"), List.of("p3", "3", "4")), 0, 0, 2));
     }
     public static List<Integer> minimalOperations(List<String> words) {
         List<Integer> result = new ArrayList<>();
@@ -34,6 +37,7 @@ public class SingUPPassword {
     }
 
     public static List<String> fetchItemsToDisplay(List<List<String>> items, int sortParameter, int sortOrder, int X) {
+
         return items.stream().reduce((a, b) -> {
             if (sortParameter == 0 && sortOrder == 0) {
                 if (a.get(0).compareTo(b.get(0)) < 0){
@@ -49,6 +53,7 @@ public class SingUPPassword {
                     return b;
                 }
             }
+
             return b;
         }).stream().limit(X).map(item -> item.get(0)).collect(Collectors.toList());
 
